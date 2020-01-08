@@ -1,0 +1,15 @@
+{
+	"compilerOptions": {
+		"baseUrl": "./",
+		"module": "commonjs",
+		"target": "es5",
+		"allowJs": true,
+		"jsx": "react",
+		"noEmit": true,
+		// For import React and ReactDOM
+		"allowSyntheticDefaultImports": true
+	},
+	"exclude": [
+		"node_modules"
+	]
+}
