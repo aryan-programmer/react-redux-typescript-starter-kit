@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "A simple starter kit for React with Redux in TypeScript using Babel and Webpack.",
   "author": "aryan.programer@gmail.com",
+  "repository": {
+    "type": "git",
+    "directory": "https://github.com/aryan-programmer/react-redux-typescript-starter-kit.git"
+  },
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server --open",
