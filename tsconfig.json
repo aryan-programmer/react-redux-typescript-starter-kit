@@ -6,8 +6,11 @@
 		"allowJs": true,
 		"jsx": "react",
 		"noEmit": true,
-		// For import React and ReactDOM
-		"allowSyntheticDefaultImports": true
+		// For `import React from 'react';
+		// import ReactDOM from 'react-dom';`
+		"allowSyntheticDefaultImports": true,
+		"strictNullChecks": true,
+		"noImplicitAny": true
 	},
 	"exclude": [
 		"node_modules"

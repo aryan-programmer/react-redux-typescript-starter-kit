@@ -1,7 +1,6 @@
 node_modules
 
-bundle.main.js
-bundle.main.js.map
-
-style/*.css
-style/*.css.map
+main.js
+main.js.map
+main.css
+main.css.map
