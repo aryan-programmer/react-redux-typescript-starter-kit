@@ -10,7 +10,7 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server --open",
-    "build:dev": "webpack --mode=development --progress --color",
+    "build:dev": "webpack --mode=development --progress --color --watch",
     "build": "webpack --mode=production --progress --color",
     "check-types": "tsc"
   },
