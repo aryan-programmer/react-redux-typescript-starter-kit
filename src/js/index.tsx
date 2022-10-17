@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOMClient from 'react-dom/client';
 import {Provider} from 'react-redux';
 import {applyMiddleware, createStore} from 'redux';
 
@@ -10,8 +10,12 @@ import reducers from './reducers';
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
 
-ReactDOM.render(
+const container: HTMLElement = document.getElementById('body-div')!;
+
+const root = ReactDOMClient.createRoot(container);
+
+root.render(
 	<Provider store={createStoreWithMiddleware(reducers)}>
 		<App/>
-	</Provider>,
-	document.getElementById('body-div'));
+	</Provider>
+);

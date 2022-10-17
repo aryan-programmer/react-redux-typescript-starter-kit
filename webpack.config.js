@@ -1,19 +1,19 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const path                 = require("path");
 
 module.exports = {
 	entry    : ["./src/js/index.tsx"],
 	devtool  : "source-map",
 	output   : {
-		publicPath: "/",
+		publicPath: "./public/",
 		filename  : "main.js",
-		path      : __dirname,
+		path      : path.join(__dirname, 'public/build'),
 	},
 	plugins  : [
 		new MiniCssExtractPlugin(
 			{
 				filename     : "[name].css",
 				chunkFilename: "[id].css",
-				sourceMaps   : true
 			}),
 	],
 	module   : {
@@ -23,7 +23,6 @@ module.exports = {
 				{
 					loader : MiniCssExtractPlugin.loader, // inject CSS to page
 					options: {
-						sourceMap: true
 					},
 				}, {
 					loader : "csso-loader", // minifies CSS
@@ -38,11 +37,6 @@ module.exports = {
 				}, {
 					loader : "postcss-loader", // Run postcss actions
 					options: {
-						plugins  : function () { // postcss plugins, can be exported to postcss.config.js
-							return [
-								require("autoprefixer")
-							];
-						},
 						sourceMap: true
 					}
 				}, {
@@ -62,7 +56,10 @@ module.exports = {
 		extensions: [".js", ".jsx", ".ts", ".tsx"],
 	},
 	devServer: {
-		contentBase: "./",
+		static: {
+			directory: path.join(__dirname, 'public'),
+		},
+		//contentBase: "./",
 		hot        : true
 	},
 };
